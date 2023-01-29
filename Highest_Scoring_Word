@@ -1,0 +1,17 @@
+/*
+*   https://www.codewars.com/kata/57eb8fcdf670e99d9b000272/train/java
+*   1.29.23
+*/ 
+
+
+import java.util.Comparator;
+import java.util.Arrays;
+public class Kata {
+
+  public static String high(String s) {
+    String[] arr = s.split(" ");
+    return Arrays.stream(arr).max(Comparator.comparingInt(word -> word.chars().map(ch -> ch -'a' +1).sum())).get();
+
+  }
+
+}

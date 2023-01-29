@@ -1,0 +1,25 @@
+/*
+*   https://www.codewars.com/kata/5f7c38eb54307c002a2b8cc8/train/java
+*   1.28.23
+*/ 
+
+
+public class Kata {
+    public static String removeParentheses(final String str) {
+        StringBuilder sb = new StringBuilder();
+        int count = 0;
+      
+        for (char ch : str.toCharArray()){
+          if (ch == '('){
+            count++;
+          }else if (ch == ')'){
+            count--;
+          }else if (count == 0){
+            sb.append(ch);
+            
+          }
+        }
+      
+      return sb.toString();
+    }
+}

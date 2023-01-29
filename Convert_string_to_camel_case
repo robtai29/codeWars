@@ -1,0 +1,15 @@
+/*
+*   https://www.codewars.com/kata/517abf86da9663f1d2000003/train/java
+*   1.28.23
+*/ 
+
+
+import java.util.Arrays;
+
+class Solution{
+
+  static String toCamelCase(String str){
+      String[] arr = str.split("[-_]");
+      return Arrays.stream(arr, 1, arr.length).map(word -> Character.toUpperCase(word.charAt(0)) + word.substring(1)).reduce(arr[0], String::concat);
+  }
+}
