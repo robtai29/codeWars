@@ -1,0 +1,9 @@
+/*
+ * https://www.codewars.com/kata/5b180e9fedaa564a7000009a/train/java
+ * 11.3.24
+ */
+public class Solution {
+    public static String solve(final String str) {
+        return str.chars().filter(Character::isUpperCase).count() <= str.chars().filter(Character::isLowerCase).count() ? str.toLowerCase() : str.toUpperCase();
+    }
+}

@@ -1,0 +1,49 @@
+/*
+*   https://www.codewars.com/kata/5259b20d6021e9e14c0010d4/train/java
+*   7.4.23
+*/ 
+
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class Kata
+{
+  public static String reverseWords(final String original)
+  {
+    return original.trim().isEmpty() ? original : Stream.of(original.split(" ")).map(str -> new StringBuilder(str).reverse()).collect(Collectors.joining(" "));
+    
+    }
+
+}
+
+/*
+ * public class Kata
+{
+  public static String reverseWords(final String original)
+  {
+    StringBuilder res = new StringBuilder();
+    StringBuilder word = new StringBuilder();
+    
+    for (char ch : original.toCharArray()){
+      if (ch == ' '){
+        if (word.length() > 0){
+          res.append(word.reverse().toString());
+          word.setLength(0);
+          
+        }
+        
+        res.append(ch);
+      }else{
+        word.append(ch);
+      }
+    }
+    
+    if (word.length()  > 0){
+      res.append(word.reverse().toString());
+    }
+    
+    return res.toString();
+  }
+}
+ * 
+ */

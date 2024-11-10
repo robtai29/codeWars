@@ -1,0 +1,42 @@
+/*
+*   https://www.codewars.com/kata/5667e8f4e3f572a8f2000039/train/java
+*   10.26.24
+*/ 
+
+public class Accumul {
+    
+    public static String accum(String s) {
+     StringBuilder sb = new StringBuilder();
+      s = s.toLowerCase();
+      
+      for (int i = 0; i < s.length(); i++){
+        char ch = s.charAt(i);
+        sb.append(Character.toUpperCase(ch));
+        if (i > 0){
+          String str = (ch + "").repeat(i);
+          sb.append(str);
+        }
+        
+        String delimit = i == s.length() -1 ? "" : "-";
+        sb.append(delimit);
+      }
+      
+      return sb.toString();
+    }
+}
+
+
+/*
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+public class Accumul {
+    public static String accum(String s) {
+        var chars = s.split("");
+
+        return IntStream.range(0, chars.length)
+                .mapToObj(i -> chars[i].toUpperCase() + chars[i].toLowerCase().repeat(i))
+                .collect(Collectors.joining("-"));
+    }
+}
+ */

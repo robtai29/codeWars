@@ -1,0 +1,11 @@
+/*
+ * https://www.codewars.com/kata/5417423f9e2e6c2f040002ae/train/java
+ * 11.2.24
+ */
+
+
+public class Solution{
+  public static int[] digitize(int n){
+    return Integer.toString(n).chars().map(num -> num - '0').toArray();
+  }
+}
